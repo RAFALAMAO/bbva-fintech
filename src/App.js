@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           A huevito ya quedó ésta huevada para el front :v.
-        </p>
+        </pd>
         <a
           className="App-link"
           href="https://reactjs.org"
