@@ -1,0 +1,11 @@
+name: Primera prueba
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: "echo BUENAS BUENAS!"
