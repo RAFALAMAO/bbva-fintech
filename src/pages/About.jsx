@@ -26,7 +26,7 @@ export default class About extends Component {
         <H1>About</H1>
         <Desc>
           <P>
-          I’m a Mechatronic Engineer at UPIITA from México, I love development, music and graphical design.
+          I’m a Mechatronic Engineer at UPIITA from México, I love development, music and graphical design :3.
 
           <br/><br/>I worked one year and a half at Intevolution developing intelligent bots with Javascript, Azure and programing simple front-end interfaces. I made my social service and engineering final work at CINVESTAV Zacatenco developing with ROS some computer vision and mobile robot control nodes.
 
