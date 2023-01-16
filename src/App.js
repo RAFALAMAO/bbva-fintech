@@ -1,7 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import About from "./pages/About";
-import Extras from "./pages/Extras";
-import Home from "./pages/Home";
+
+// Components
+import Home from "./views/home/Home";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import AdminDash from "./components/AdminDash/AdminDash";
+import CustomerDash from "./components/CustomerDash/CustomerDash";
+
+// Styles
 import "./App.css";
 
 function App() {
@@ -9,8 +15,10 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/extras" element={<Extras/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/admin-dash" element={<AdminDash/>}/>
+        <Route path="/customer-dash" element={<CustomerDash/>}/>
       </Routes>
     </div>
   );

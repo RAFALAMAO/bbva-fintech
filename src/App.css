@@ -6,6 +6,6 @@
 .App {
   height: 100vh;
   /* background-image: url("/framer-motion-app/images/background.jpg"); */
-  color: white;
+  color: rgb(0, 0, 0);
   overflow: hidden;
 }

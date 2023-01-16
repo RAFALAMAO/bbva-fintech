@@ -27,4 +27,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
+    - run: cp /var/www/.env_front /var/www/actions-runner/_work/bbva-fintech/bbva-fintech/.env
     - run: npm run build --if-present
