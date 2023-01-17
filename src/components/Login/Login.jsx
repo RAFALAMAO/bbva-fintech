@@ -8,6 +8,9 @@ import Nav from "../Nav/Nav";
 // Axios
 import { axiosLogin } from "../../config/axiosGeneral";
 
+// Styles
+import './login.css'
+
 
 export default function Login() {
   // =========== Context
@@ -59,38 +62,40 @@ export default function Login() {
   return (
     <>
 			<Nav/>
-			<h1>Login feo :V</h1>
-			<form
-				onSubmit={sendLogin}
-			>
-				<div>
-					<p>Ingresa correo</p>
-					<input
-						type="text"
-						name="email"
-						onChange={handleChange}
-					/>
-				</div>
-				<div>
-					<p>Ingresa contraseña</p>
-					<input
-						type="password"
-						name="pwd"
-						onChange={handleChange}
-					/>
-				</div>
-				<div>
-					<button
-						type="button"
-						onClick={(e) => {
-							e.preventDefault();
-							navigate('/register')
-						}}
-					>Registrarse</button>
-					<button>Iniciar sesión</button>
-				</div>
-			</form>
-			<p>La respuesta: {JSON.stringify(response)}</p>
+			<div className='login'>
+				<h1>Login feo :V</h1>
+				<form
+					onSubmit={sendLogin}
+				>
+					<div>
+						<p>Ingresa correo</p>
+						<input
+							type="text"
+							name="email"
+							onChange={handleChange}
+						/>
+					</div>
+					<div>
+						<p>Ingresa contraseña</p>
+						<input
+							type="password"
+							name="pwd"
+							onChange={handleChange}
+						/>
+					</div>
+					<div>
+						<button
+							type="button"
+							onClick={(e) => {
+								e.preventDefault();
+								navigate('/register')
+							}}
+						>Registrarse</button>
+						<button>Iniciar sesión</button>
+					</div>
+				</form>
+				<p>La respuesta: {JSON.stringify(response)}</p>
+			</div>
 			<Footer/>
     </>
   )

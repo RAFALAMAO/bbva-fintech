@@ -9,6 +9,9 @@ import { uploadFile } from '../../helpers/uploadFile';
 import Footer from "../Footer/Footer";
 import Nav from "../Nav/Nav";
 
+// Styles
+import './customerDash.css'
+
 export default function CustomerDash() {
   // =========== Context
 
@@ -51,17 +54,19 @@ export default function CustomerDash() {
   return (
     <>
       <Nav/>
-      <h1>Dash del usuario</h1>
-      <input
-        type="file"
-        name="articulo"
-        accept=".pdf"
-        onClick={resetInput}
-        onChange={changesObserver}
-      />
-      <label style={{cursor: 'text'}}>
-        <a href={docLink} target='_blank' rel='noreferrer'>{docLink}</a>
-      </label>
+      <div className='customer-dash'>
+        <h1>Dash del usuario</h1>
+        <input
+          type="file"
+          name="articulo"
+          accept=".pdf"
+          onClick={resetInput}
+          onChange={changesObserver}
+        />
+        <label style={{cursor: 'text'}}>
+          <a href={docLink} target='_blank' rel='noreferrer'>{docLink}</a>
+        </label>
+      </div>
       <Footer/>
     </>
   )

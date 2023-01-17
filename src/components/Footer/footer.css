@@ -1,0 +1,26 @@
+.footer {
+  /* position: relative; */
+  display: block;
+
+  overflow: hidden;
+  text-decoration: none;
+
+  background-color: #072146;
+  color: whitesmoke;
+
+
+  height: 300px;
+}
+
+.footer > img {
+  padding-top: 50px;
+  width: 112px;
+  padding-left: 18%;
+}
+
+.footer > p {
+  margin-top: 100px;
+  font-size: 12px;
+  padding-top: 20px;
+  padding-left: 18%;
+}

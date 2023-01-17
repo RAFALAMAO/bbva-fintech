@@ -8,6 +8,9 @@ import Nav from "../Nav/Nav";
 // Axios
 import { axiosGetUsersDoctos } from "../../config/axiosGeneral";
 
+// Styles
+import './adminDash.css'
+
 export default function AdminDash() {
   // =========== Context
 
@@ -39,13 +42,15 @@ export default function AdminDash() {
   return (
     <>
       <Nav/>
-      <h1>AdminDash</h1>
-      {usersDoctosAndInfo.map((user, idx) => {
-        return <div key={idx}>
-          <p>{`${user.primer_nombre} ${user.apellido_paterno}`}</p>
-          <p>{`Link: ${user.user_doctos[0].url}`}</p>
-        </div>
-      })}
+      <div className='admin-dash'>
+        <h1>AdminDash</h1>
+        {usersDoctosAndInfo.map((user, idx) => {
+          return <div key={idx}>
+            <p>{`${user.primer_nombre} ${user.apellido_paterno}`}</p>
+            <p>{`Link: ${user.user_doctos[0].url}`}</p>
+          </div>
+        })}
+      </div>
       <Footer/>
     </>
   )

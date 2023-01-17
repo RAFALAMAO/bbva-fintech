@@ -1,0 +1,32 @@
+.nav-horizontal {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-decoration: none;
+
+  background-color: #072146;
+  color: whitesmoke;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 200px;
+
+  height: 100px;
+
+  padding-left: 20%;
+}
+
+.nav-horizontal > li {
+  cursor: pointer;
+}
+
+.nav-horizontal > li > a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.nav-horizontal > li > span > img {
+  width: 150px;
+}

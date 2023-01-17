@@ -6,6 +6,9 @@ import InfoSlider from "../../components/InfoSlider/InfoSlider";
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Footer";
 
+// Syles
+import './home.css'
+
 export default function Home() {
   // =========== Context
 
@@ -30,13 +33,15 @@ export default function Home() {
   return (
     <div>
       <Nav/>
-      <InfoSlider/>
-      <button
-        onClick={newUserRegistrer}
-      >Registrarse</button>
-      <button
-        onClick={login}
-      >Iniciar sesión</button>
+      <div className='home'>
+        <InfoSlider/>
+        <button
+          onClick={newUserRegistrer}
+        >Registrarse</button>
+        <button
+          onClick={login}
+        >Iniciar sesión</button>
+      </div>
       <Footer/>
     </div>
   )
