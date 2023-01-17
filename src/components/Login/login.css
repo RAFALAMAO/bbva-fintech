@@ -1,3 +1,91 @@
 .login {
-	height: 90vh;
+	margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.login > h1 {
+	height: 60px;
+	margin: auto;
+  width: 100%;
+	color: whitesmoke;
+  padding-top: 20px;
+
+	text-align: center;
+	background-color: #004481;
+}
+
+.login-form {
+	height: 50vh;
+	margin: auto;
+  width: 50%;
+  /* border: 3px solid green; */
+  padding: 10px;
+}
+
+.login-input {
+	margin: auto;
+  width: 100%;
+}
+
+.login-input > input {
+	margin: auto;
+  width: 97%;
+	margin-bottom: 20px;
+  border: 1px solid #004481;
+	border-radius: 5px;
+	height: 35px;
+	padding: 5px;
+
+	font-size: 15px;
+}
+
+.login-input > p {
+	font-weight: bold;
+}
+
+.login-show-pwd {
+	margin: 0;
+	margin-top: -15px;
+	margin-bottom: 20px;
+	font-size: 14px;
+	cursor: pointer;
+	width: 50px;
+}
+
+.login-message {
+	font-size: 14px;
+	color: rgb(127, 9, 9);
+}
+
+.login-buttons {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	align-items: center;
+	justify-content: center;
+  width: 100%;
+	margin-top: 20px;
+}
+
+.login-reg-btn,
+.login-log-btn {
+  width: 40%;
+	height: 45px;
+  padding: 10px;
+	background-color: #028484;
+	border: none;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+}
+
+.login-log-btn:disabled {
+	background-color: #979797;
+	color: #dedede;
+	cursor: auto;
+}
+
+.login-reg-btn {
+	background-color: #4d4079;
 }

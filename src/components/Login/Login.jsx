@@ -17,7 +17,9 @@ export default function Login() {
 
   // =========== States
   const [loginData, setLoginData] = useState({});
-	const [response, setResponse] = useState({});
+	const [response, setResponse] = useState('_______');
+	const [showPwd, setShowPwd] = useState(false);
+	const [disableBtn, setDisableBtn] = useState(false);
 
   // =========== Constants
   const navigate = useNavigate();
@@ -34,6 +36,8 @@ export default function Login() {
 
   const sendLogin = async (e) => {
 		e.preventDefault();
+		setResponse('_______');
+		setDisableBtn(true);
 
 		const loginBody = {
 			email: loginData.email,
@@ -54,6 +58,7 @@ export default function Login() {
 		} catch (error) {
 			console.log(error);
 		}
+		setDisableBtn(false);
   }
 
   // =========== UseEffects
@@ -63,38 +68,53 @@ export default function Login() {
     <>
 			<Nav/>
 			<div className='login'>
-				<h1>Login feo :V</h1>
+				<h1>¡Bienvenido a BBVA Talent!</h1>
+				<p>Por favor ingresa los datos que se te piden a continuación para ingresar a tu cuenta de BBVA Talent.</p>
 				<form
 					onSubmit={sendLogin}
+					className={'login-form'}
 				>
-					<div>
-						<p>Ingresa correo</p>
+					<div className='login-input'>
+						<p>Correo electrónico</p>
 						<input
 							type="text"
 							name="email"
 							onChange={handleChange}
 						/>
 					</div>
-					<div>
-						<p>Ingresa contraseña</p>
+					<div className='login-input'>
+						<p>Contraseña</p>
 						<input
-							type="password"
+							type={showPwd ? 'text' : "password"}
 							name="pwd"
 							onChange={handleChange}
 						/>
 					</div>
-					<div>
+					<p
+						className='login-show-pwd'
+						onClick={(e) => {
+							setShowPwd(!showPwd);
+						}}
+					>{ !showPwd ? 'Ver' : 'Ocultar' }</p>
+					<p
+						className='login-message'
+						style={{opacity: response === '_______' ? 0 : 1}}
+					>{response}</p>
+					<div className='login-buttons'>
 						<button
 							type="button"
 							onClick={(e) => {
 								e.preventDefault();
 								navigate('/register')
 							}}
+							className='login-reg-btn'
 						>Registrarse</button>
-						<button>Iniciar sesión</button>
+						<button
+							className='login-log-btn'
+							disabled={disableBtn}
+						>Iniciar sesión</button>
 					</div>
 				</form>
-				<p>La respuesta: {JSON.stringify(response)}</p>
 			</div>
 			<Footer/>
     </>
