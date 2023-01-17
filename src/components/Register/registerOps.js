@@ -2,11 +2,13 @@ export const registerOps = [
   [
     {
       label: 'Nombre',
-      name: 'primer_nombre'
+      name: 'primer_nombre',
+      need: true
     },
     {
       label: 'Apellido paterno',
-      name: 'apellido_paterno'
+      name: 'apellido_paterno',
+      need: true
     }
   ],
   [
@@ -21,12 +23,13 @@ export const registerOps = [
   ],
   [
     {
-      label: 'Institución',
-      name: 'intitucion'
+      label: 'Nombre de Institución',
+      name: 'nombre_institucion'
     },
     {
       label: 'Nombre del artículo',
-      name: 'nobre_articulo'
+      name: 'nombre_articulo',
+      need: true
     },
   ],
   [
@@ -35,7 +38,7 @@ export const registerOps = [
       name: 'has_publicado'
     },
     {
-      label: 'Sí tu respuesta fue afirmativa, compartenos los enlaces',
+      label: 'Compartenos el enlace de tu ultimo artículo',
       name: 'enlaces'
     }
   ],

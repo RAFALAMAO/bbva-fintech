@@ -1,0 +1,76 @@
+.reg {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.reg > h1 {
+  color: #14457d;
+  padding: 15px;
+  text-align: center;
+	background-color: #c9e6ff;
+  border-radius: 30px 0 30px 0;
+}
+
+.reg-row-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.reg-col-inputs > p {
+	font-weight: 500;
+}
+
+.reg-col-inputs > input {
+	/* margin: auto; */
+  width: 97%;
+	margin-bottom: 20px;
+  border: 1px solid #004481;
+	border-radius: 5px;
+	height: 35px;
+	padding: 5px;
+
+	font-size: 15px;
+}
+
+.reg-show-pwd {
+	margin: 0;
+	margin-top: -15px;
+	margin-bottom: 20px;
+	font-size: 14px;
+	cursor: pointer;
+	width: 50px;
+}
+
+.reg-message {
+	margin-top: 0px;
+	font-size: 14px;
+	color: rgb(127, 9, 9);
+}
+
+.reg-button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+  width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.reg-button > button {
+  width: 40%;
+  height: 50px;
+  border: none;
+	background-color: #028484;
+	border-radius: 4px;
+  color: white;
+	cursor: pointer;
+}
+
+.reg-button > button:disabled {
+  background-color: #979797;
+	color: #dedede;
+	cursor: auto;
+}
