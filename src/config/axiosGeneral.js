@@ -21,3 +21,10 @@ export const axiosGetUsersDoctos = () => axios.create({
     "api-token": API_TOKEN,
   }
 });
+
+export const axiosCreateUpdateUser = () => axios.create({
+  baseURL: `${URL_API}/user/create-update`,
+  headers:{
+    "api-token": API_TOKEN,
+  }
+});
