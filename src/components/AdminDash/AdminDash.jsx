@@ -1,4 +1,4 @@
-'stric'
+'use stric'
 import React, { useEffect, useState } from 'react';
 
 // Components
@@ -22,19 +22,19 @@ export default function AdminDash() {
   // =========== Session storage
 
   // =========== Functions
+  const fetchData =  async () => {
+    try {
+      const res = await axiosGetUsersDoctos().get('/');
+      const resUsersDocs = res.data.documents;
+      console.log(resUsersDocs);
+      setUsersDoctosAndInfo(resUsersDocs);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   // =========== UseEffects
   useEffect(() => {
-    const fetchData =  async () => {
-      try {
-        const res = await axiosGetUsersDoctos().get('/');
-        const resUsersDocs = res.data.documents;
-        console.log(resUsersDocs);
-        setUsersDoctosAndInfo(resUsersDocs);
-      } catch (error) {
-        console.log(error);
-      }
-    }
     fetchData();
   }, [])
 
@@ -47,7 +47,6 @@ export default function AdminDash() {
         {usersDoctosAndInfo.map((user, idx) => {
           return <div key={idx}>
             <p>{`${user.primer_nombre} ${user.apellido_paterno}`}</p>
-            <p>{`Link: ${user.user_doctos[0].url}`}</p>
           </div>
         })}
       </div>

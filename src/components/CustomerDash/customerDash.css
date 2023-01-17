@@ -1,3 +1,65 @@
 .customer-dash {
-  height: 90vh;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 60px;
+}
+
+.customer-dash > h1 {
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+	background-color: #36b59a;
+  border-radius: 30px;
+}
+
+.customer-input-container {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.customer-input-container > input {
+  position: relative;
+  width: 94%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px dashed rgb(47, 30, 159);
+  text-align: center;
+  background-color: rgb(130, 151, 222);
+  cursor: pointer;
+  margin-top: 50px;
+
+  box-shadow:  9px 9px 18px rgba(44, 86, 139, 0.5),
+             -9px -9px 18px rgba(60, 116, 189, 0.2);
+}
+
+.customer-input-container-message{
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.reg-button-container {
+  display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+  width: 100%;
+	margin-top: 50px;
+}
+
+.reg-button-container button {
+  width: 40%;
+  height: 50px;
+  border: none;
+	background-color: #672a69;
+	border-radius: 4px;
+  color: white;
+	cursor: pointer;
+}
+
+.reg-button-container button:disabled {
+	background-color: #979797;
+	color: #dedede;
+	cursor: auto;
 }
