@@ -7,3 +7,10 @@ export const axiosLogin = () => axios.create({
     "api-token": API_TOKEN,
   }
 });
+
+export const axiosUploadFile = () => axios.create({
+  baseURL: `${URL_API}/upload-files`,
+  headers:{
+    "api-token": API_TOKEN,
+  }
+});
