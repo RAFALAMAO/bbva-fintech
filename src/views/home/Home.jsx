@@ -1,7 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import InfoSlider from "../../components/InfoSlider/InfoSlider";
+
+// Components
 import Nav from "../../components/Nav/Nav";
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   // =========== Context
@@ -34,6 +37,7 @@ export default function Home() {
       <button
         onClick={login}
       >Iniciar sesión</button>
+      <Footer/>
     </div>
   )
 }

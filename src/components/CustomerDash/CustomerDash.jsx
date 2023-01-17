@@ -5,21 +5,25 @@ import { useNavigate } from 'react-router-dom';
 // Helpers
 import { uploadFile } from '../../helpers/uploadFile';
 
+// Components
+import Footer from "../Footer/Footer";
+import Nav from "../Nav/Nav";
+
 export default function CustomerDash() {
   // =========== Context
 
   // =========== States
-  const [docLink, setDocLink] = useState('https://www.google.com');
+  const [docLink, setDocLink] = useState('...');
 
   // =========== Constants
   const navigate = useNavigate();
 
   // =========== Session storage
+  const userEmail = sessionStorage.getItem('user_email');
 
   // =========== Functions
   // Enable re-upload same file in chromium
   const resetInput = (e) => {
-    console.log(e.target)
     e.target.value = '';
   }
 
@@ -36,26 +40,17 @@ export default function CustomerDash() {
 
     // Upload file and get link
     const documentFile = e.target.files[0];
-    const uploadedFile = await uploadFile(documentFile, 'aaronjt@outlook.com');
-
-    // const res = await getDocument(e);
-    // console.log(res.data.documentsUrl);
-    // const getVal = Object.values(res.data.documentsUrl);
-
-    // dispatch({
-    //   type: 'ALTA-DOC',
-    //   payload: {
-    //     name: e.target.id,
-    //     value: getVal[0],
-    //   },
-    // });
+    const uploadedFile = await uploadFile(documentFile, userEmail);
+    const newDocLink = uploadedFile.data.documentsUrl;
+    setDocLink(newDocLink);
   };
 
   // =========== UseEffects
 
 
   return (
-    <div>
+    <>
+      <Nav/>
       <h1>Dash del usuario</h1>
       <input
         type="file"
@@ -67,6 +62,7 @@ export default function CustomerDash() {
       <label style={{cursor: 'text'}}>
         <a href={docLink} target='_blank' rel='noreferrer'>{docLink}</a>
       </label>
-    </div>
+      <Footer/>
+    </>
   )
 }

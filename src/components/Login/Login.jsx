@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Components
+import Footer from "../Footer/Footer";
 import Nav from "../Nav/Nav";
 
 // Axios
@@ -28,7 +29,9 @@ export default function Login() {
 		})
   }
 
-  const sendLogin = async () => {
+  const sendLogin = async (e) => {
+		e.preventDefault();
+
 		const loginBody = {
 			email: loginData.email,
 			password: loginData.pwd,
@@ -40,21 +43,26 @@ export default function Login() {
 
 			setResponse(loginMessage);
 			if( login.data.message.includes('succes') ){
+				sessionStorage.setItem('user_email', loginData.email)
 				navigate(`/${userRole}-dash`)
 			}
 
-			console.log(login);
+			// console.log(login);
 		} catch (error) {
 			console.log(error);
 		}
   }
 
   // =========== UseEffects
+
+
   return (
     <>
 			<Nav/>
-			Login feo :V
-			<div>
+			<h1>Login feo :V</h1>
+			<form
+				onSubmit={sendLogin}
+			>
 				<div>
 					<p>Ingresa correo</p>
 					<input
@@ -66,17 +74,24 @@ export default function Login() {
 				<div>
 					<p>Ingresa contraseña</p>
 					<input
-						type="text"
+						type="password"
 						name="pwd"
 						onChange={handleChange}
 					/>
 				</div>
-				<button
-					onClick={sendLogin}
-				>Enviar
-				</button>
-			</div>
+				<div>
+					<button
+						type="button"
+						onClick={(e) => {
+							e.preventDefault();
+							navigate('/register')
+						}}
+					>Registrarse</button>
+					<button>Iniciar sesión</button>
+				</div>
+			</form>
 			<p>La respuesta: {JSON.stringify(response)}</p>
+			<Footer/>
     </>
   )
 }

@@ -14,3 +14,10 @@ export const axiosUploadFile = () => axios.create({
     "api-token": API_TOKEN,
   }
 });
+
+export const axiosGetUsersDoctos = () => axios.create({
+  baseURL: `${URL_API}/get-files`,
+  headers:{
+    "api-token": API_TOKEN,
+  }
+});

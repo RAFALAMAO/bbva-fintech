@@ -28,5 +28,10 @@ export async function uploadFile(file, emailIn){
       }
   }
 
-  return await axiosUploadFile().post('/', toSend);
+  try {
+    return await axiosUploadFile().post('/', toSend);
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
 }
