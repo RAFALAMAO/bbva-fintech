@@ -92,6 +92,7 @@ export default function Login() {
 					</div>
 					<p
 						className='login-show-pwd'
+						style={{ opacity: loginData.pwd ? 1 : 0 }}
 						onClick={(e) => {
 							setShowPwd(!showPwd);
 						}}
