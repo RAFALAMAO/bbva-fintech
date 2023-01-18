@@ -1,0 +1,29 @@
+.home-carousel-content {
+  background-color: #004481;
+  width: 80%;
+  display: flex;
+  gap: 100px;
+  align-content: space-between;
+}
+
+.home-carousel-content h1 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  margin-top: 70px;
+  width: 70%;
+}
+
+.home-carousel-content h2 {
+  color: whitesmoke;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 70px;
+  width: 70%;
+}
+
+.home-carousel-content img {
+  width: 300px;
+  margin-top: 20px
+}

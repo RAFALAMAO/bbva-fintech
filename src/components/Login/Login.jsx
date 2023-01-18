@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Components
@@ -62,6 +62,9 @@ export default function Login() {
   }
 
   // =========== UseEffects
+	useEffect(() => {
+		window.scrollTo(0,0)
+	},[])
 
 
   return (

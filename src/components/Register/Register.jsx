@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 // Axios
@@ -93,6 +93,11 @@ export default function Register() {
   }
 
   // =========== UseEffects
+  useEffect(() => {
+		window.scrollTo(0,0)
+	},[])
+
+
   return (
     <>
 			<Nav/>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -59,7 +59,9 @@ export default function CustomerDash() {
   };
 
   // =========== UseEffects
-
+  useEffect(() => {
+		window.scrollTo(0,0)
+	},[])
 
   return (
     <>

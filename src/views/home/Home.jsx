@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InfoSlider from "../../components/InfoSlider/InfoSlider";
 
@@ -26,29 +26,46 @@ export default function Home() {
   // =========== Session storage
 
   // =========== Functions
-  const newUserRegistrer = () => {
-    navigate('/register');
-  }
-
-  const login = () => {
-    navigate('/login');
-  }
 
   // =========== UseEffects
+  useEffect(() => {
+		window.scrollTo(0,0)
+	},[])
 
   return (
     <div>
       <Nav/>
-      <div className='home'>
+      <div style={{
+        background: '#004481',
+        padding: '10px'
+      }}>
         <InfoSlider/>
-        <h1>Tecnologías</h1>
+      </div>
+      <div className='home'>
+        <h1>Tecnologías utilizadas en la propuesta</h1>
         <div className='home-img-container'>
-          <img className='home-imgs' src={AzureVmImg} alt="" />
-          <img className='home-imgs' src={AzureBsImg} alt="" />
-          <img className='home-imgs' src={MySqlImg} alt="" />
-          <img className='home-imgs' src={GithubImg} alt="" />
+          <a href="https://azure.microsoft.com/en-us/products/virtual-machines/" target={'_blank'} rel='noreferrer' >
+            <img style={{marginTop:'50px'}} className='home-imgs' src={AzureVmImg} alt="" />
+          </a>
+          <a href="https://github.com/" target={'_blank'} rel='noreferrer' >
+            <img className='home-imgs' src={GithubImg} alt="" />
+          </a>
+          <a href="https://www.mysql.com" target={'_blank'} rel='noreferrer' >
+            <img className='home-imgs' src={MySqlImg} alt="" />
+          </a>
+          <a href="https://azure.microsoft.com/en-us/products/storage/blobs/" target={'_blank'} rel='noreferrer' >
+            <img style={{marginTop:'50px'}} className='home-imgs' src={AzureBsImg} alt="" />
+          </a>
         </div>
-        <div className='login-buttons'>
+        <div className='repo-btns'>
+          <a href="https://github.com/RAFALAMAO/bbva-fintech-back" target={'_blank'} rel='noreferrer'>
+            <button id='rep-back'>Repositorio Back-End</button>
+          </a>
+          <a href="https://github.com/RAFALAMAO/bbva-fintech" target={'_blank'} rel='noreferrer'>
+            <button id='rep-front'>Repositorio Front-End</button>
+          </a>
+        </div>
+        {/* <div className='login-buttons'>
           <button
             type="button"
             onClick={(e) => {
@@ -61,10 +78,10 @@ export default function Home() {
             className='login-log-btn'
             onClick={(e) => {
               e.preventDefault();
-              navigate('/register')
+              navigate('/login')
             }}
           >Iniciar sesión</button>
-					</div>
+				</div> */}
       </div>
       <Footer/>
     </div>
