@@ -1,3 +1,21 @@
 .home {
-  /* height: 100vh; */
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.home-imgs {
+  width: 200px;
+  /* border: 1px solid blue; */
+}
+
+.home-img-container {
+  margin: auto;
+  width: 55%;
+  padding: 10px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
