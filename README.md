@@ -2,7 +2,7 @@
 
 App made with ReactJs. It is a proposal in which those interested in technology are invited to propose an article for BBVA.
 
-![image](https://github.com/RAFALAMAO/MyPortfolio/raw/master/public/images/projects/MoviesFlix.png)
+![image](https://github.com/RAFALAMAO/bbva-fintech/blob/main/public/images/webPage.png?raw=true)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
