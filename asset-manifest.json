@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bbva-fintech/static/css/main.44ccc9bf.css",
-    "main.js": "/bbva-fintech/static/js/main.7ab86940.js",
+    "main.js": "/bbva-fintech/static/js/main.b7f1614f.js",
     "static/media/web.png": "/bbva-fintech/static/media/web.0b3ee39bba6f1a5ee547.png",
     "static/media/mujer_con_lente_usando_celular.png": "/bbva-fintech/static/media/mujer_con_lente_usando_celular.6694727e6a9492e9fda5.png",
     "static/media/chica_usando_celular.png": "/bbva-fintech/static/media/chica_usando_celular.4e0af6f440c7cd085de2.png",
@@ -10,10 +10,10 @@
     "static/media/logo_bbva_blanco.svg": "/bbva-fintech/static/media/logo_bbva_blanco.d95c2432c9b0242d08e6797e9b717acf.svg",
     "index.html": "/bbva-fintech/index.html",
     "main.44ccc9bf.css.map": "/bbva-fintech/static/css/main.44ccc9bf.css.map",
-    "main.7ab86940.js.map": "/bbva-fintech/static/js/main.7ab86940.js.map"
+    "main.b7f1614f.js.map": "/bbva-fintech/static/js/main.b7f1614f.js.map"
   },
   "entrypoints": [
     "static/css/main.44ccc9bf.css",
-    "static/js/main.7ab86940.js"
+    "static/js/main.b7f1614f.js"
   ]
 }
