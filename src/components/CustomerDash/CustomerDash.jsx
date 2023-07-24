@@ -12,6 +12,9 @@ import Nav from "../Nav/Nav";
 // Styles
 import './customerDash.css'
 
+// Config
+import { GH_PAGES_ROUTE } from "../../config/globals";
+
 export default function CustomerDash() {
   // =========== Context
 
@@ -34,7 +37,7 @@ export default function CustomerDash() {
   const finishReg = () => {
     sessionStorage.removeItem('user_email');
     sessionStorage.removeItem('registerJson');
-    navigate('/');
+    navigate(`${GH_PAGES_ROUTE}`);
   }
 
   // Esta funcion observa los cambios en el input type file y condiciona el guardado de los mismos si el tipo de archivo corresponde al aceptado.

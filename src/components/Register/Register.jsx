@@ -14,6 +14,7 @@ import './register.css'
 
 // Helpers
 import { isValidateEmail } from '../../helpers/validators';
+import { GH_PAGES_ROUTE } from '../../config/globals';
 
 
 export default function Register() {
@@ -75,13 +76,13 @@ export default function Register() {
       const resMessage = createdUser.data.message;
 
       if( regSesion ){
-        navigate('/customer-dash');
+        navigate(`${GH_PAGES_ROUTE}/customer-dash`);
       }
 
       if( resMessage.includes('success') ){
         sessionStorage.setItem('user_email', registerData.correo_electronico);
         sessionStorage.setItem('registerJson', JSON.stringify(registerData));
-        navigate('/customer-dash');
+        navigate(`${GH_PAGES_ROUTE}/customer-dash`);
       }
       setResMessage(resMessage);
 
@@ -139,6 +140,11 @@ export default function Register() {
                 border: '1px solid #a81797'
               }}
             />
+            <p
+              className={'reg-show-pwd-ghost'}
+            >
+              {!showPwd ? 'Ver' : 'Ocultar'}
+            </p>
           </div>
           <div className={'reg-col-inputs'}>
             <p>Contraseña<span style={{color: 'red'}}>*</span></p>
@@ -157,7 +163,7 @@ export default function Register() {
                 setShowPwd(!showPwd);
               }}
               className={'reg-show-pwd'}
-						  style={{ opacity: registerData.contrasenia ? 1 : 0 }}
+              style={{ opacity: registerData.contrasenia ? 1 : 0 }}
             >
               {!showPwd ? 'Ver' : 'Ocultar'}
             </p>

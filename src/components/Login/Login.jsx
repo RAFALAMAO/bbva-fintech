@@ -11,6 +11,9 @@ import { axiosLogin } from "../../config/axiosGeneral";
 // Styles
 import './login.css'
 
+// Config
+import { GH_PAGES_ROUTE } from "../../config/globals";
+
 
 export default function Login() {
   // =========== Context
@@ -51,7 +54,7 @@ export default function Login() {
 			setResponse(loginMessage);
 			if( login.data.message.includes('succes') ){
 				sessionStorage.setItem('user_email', loginData.email)
-				navigate(`/${userRole}-dash`)
+				navigate(`${GH_PAGES_ROUTE}/${userRole}-dash`)
 			}
 
 			// console.log(login);
@@ -109,7 +112,7 @@ export default function Login() {
 							type="button"
 							onClick={(e) => {
 								e.preventDefault();
-								navigate('/register')
+								navigate(`${GH_PAGES_ROUTE}/register`)
 							}}
 							className='login-reg-btn'
 						>Registrarse</button>

@@ -1,29 +1,40 @@
 .home-carousel-content {
   background-color: #004481;
   width: 80%;
+  height: 450px;
   display: flex;
-  gap: 100px;
-  align-content: space-between;
-}
-
-.home-carousel-content h1 {
-  color: whitesmoke;
-  text-align: center;
-  font-size: 35px;
-  font-weight: 400;
-  margin-top: 70px;
-  width: 70%;
-}
-
-.home-carousel-content h2 {
-  color: whitesmoke;
-  text-align: center;
-  font-weight: 300;
-  margin-top: 70px;
-  width: 70%;
+  align-items: center;
+  gap: 15%;
+  padding: 0 80px;
 }
 
 .home-carousel-content img {
   width: 300px;
-  margin-top: 20px
+}
+
+.home-carousel-text {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.home-carousel-text h1 {
+  margin-bottom: 50px;
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.home-carousel-text h2 {
+  font-weight: 300;
+}
+
+.home-carousel-arrow {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  color: rgb(11, 0, 129);
+}
+
+.home-carousel-arrow:disabled {
+  opacity: 0.3;
 }

@@ -10,15 +10,18 @@ import CustomerDash from "./components/CustomerDash/CustomerDash";
 // Styles
 import "./App.css";
 
+// Config
+import { GH_PAGES_ROUTE } from "./config/globals";
+
 function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
-        <Route path="/admin-dash" element={<AdminDash/>}/>
-        <Route path="/customer-dash" element={<CustomerDash/>}/>
+        <Route path={`${GH_PAGES_ROUTE}`} element={<Home/>}/>
+        <Route path={`${GH_PAGES_ROUTE}/login`} element={<Login/>}/>
+        <Route path={`${GH_PAGES_ROUTE}/register`} element={<Register/>}/>
+        <Route path={`${GH_PAGES_ROUTE}/admin-dash`} element={<AdminDash/>}/>
+        <Route path={`${GH_PAGES_ROUTE}/customer-dash`} element={<CustomerDash/>}/>
       </Routes>
     </div>
   );

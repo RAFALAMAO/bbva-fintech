@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import Carousel from 'react-elastic-carousel'
+import React, { useRef } from 'react'
+import Carousel, {consts} from 'react-elastic-carousel'
+import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
 
 // Assests
 import SombreroImg from "../../assets/imgs/sombrero_papel.png";
@@ -38,42 +39,66 @@ export default function InfoSlider() {
     },
   ]
 
-  const orderCarousel1 = (item) => {
-    if( item.id === 2 || item.id === 4 ){
-      return <div>
-        <h1>{item.title}</h1>
-        <h2>{item.text}</h2>
-      </div>
+  const orderCarousel = (item) => {
+    if( item.id%2 === 0 ){
+      return (
+        <div className='home-carousel-content'>
+          <div className='home-carousel-text'>
+            <h1>{item.title}</h1>
+            <h2>{item.text}</h2>
+          </div>
+          <div className='.home-carousel-content-img'>
+            <img src={item.img} alt="" />
+          </div>
+        </div>
+      )
+    }else{
+      return (
+        <div className='home-carousel-content'>
+          <div className='.home-carousel-content-img'>
+            <img src={item.img} alt="" />
+          </div>
+          <div className='home-carousel-text'>
+            <h1>{item.title}</h1>
+            <h2>{item.text}</h2>
+          </div>
+        </div>
+      )
     }
-    return <div>
-      <img src={item.img} alt="" />
-    </div>
   }
-  const orderCarousel2 = (item) => {
-    if( item.id === 2 || item.id === 4 ){
-      return <div>
-        <img src={item.img} alt="" />
-      </div>
-    }
-    return <div>
-      <h1>{item.title}</h1>
-      <h2>{item.text}</h2>
-    </div>
+
+  const myArrow = ({ type, onClick, isEdge }) => {
+    const arrow = type === consts.PREV ? <BsArrowLeftCircle size={30}/> : <BsArrowRightCircle size={30}/>
+    return (
+      <button className={`home-carousel-arrow`} onClick={onClick} disabled={isEdge}>
+        {arrow}
+      </button>
+    )
   }
+
+  const carouselRef = useRef(null);
+  let resetTimeout;
 
   return (
     <div>
       <Carousel
-        // enableAutoPlay
-        // autoPlaySpeed={5000}
+        enableAutoPlay
+        autoPlaySpeed={2500}
+        ref={carouselRef}
+        enableMouseSwipe={true}
+        itemsToShow={1}
+        renderArrow={myArrow}
+        pagination={false}
+        onNextEnd={({ index }) => {
+          if(index===carrusel.length-1){
+            clearTimeout(resetTimeout);
+            resetTimeout = setTimeout(() => {
+              carouselRef?.current?.goTo(0);
+            }, 2500); // same time
+          }
+        }}
       >
-        {carrusel.map(item => <div
-          key={item.id}
-          className='home-carousel-content'
-        >
-          {orderCarousel1(item)}
-          {orderCarousel2(item)}
-        </div>)}
+        {carrusel.map(item => orderCarousel(item))}
       </Carousel>
     </div>
   )

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import InfoSlider from "../../components/InfoSlider/InfoSlider";
 
 // Components
@@ -16,16 +15,6 @@ import MySqlImg from "../../assets/imgs/mysql.png";
 import GithubImg from "../../assets/imgs/github.png";
 
 export default function Home() {
-  // =========== Context
-
-  // =========== States
-
-  // =========== Constants
-  const navigate = useNavigate();
-
-  // =========== Session storage
-
-  // =========== Functions
 
   // =========== UseEffects
   useEffect(() => {
@@ -65,23 +54,6 @@ export default function Home() {
             <button id='rep-front'>Repositorio Front-End</button>
           </a>
         </div>
-        {/* <div className='login-buttons'>
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate('/register')
-            }}
-            className='login-reg-btn'
-          >Registrarse</button>
-          <button
-            className='login-log-btn'
-            onClick={(e) => {
-              e.preventDefault();
-              navigate('/login')
-            }}
-          >Iniciar sesión</button>
-				</div> */}
       </div>
       <Footer/>
     </div>
